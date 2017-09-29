@@ -20,15 +20,30 @@
 				<div class="row">
 					
 					<!--<input type="text" name="acronym_task" placeholder="Acronym">
+					this.task.name = request.body.name;
+	this.task.email = request.body.email;
+	this.task.dateIni = request.body.dateIni;
+	this.task.dateEnd = request.body.dateEnd;
+	this.task.acr = request.body.acr;
+	this.task.desc = request.body.desc;
+	this.task.tags = request.body.tags;
+	this.task.comments = request.body.comments;
+	this.task.repeat = request.body.repeat;
+	
 					-->
+				<form action="/addTask" method="post" class="box login">
 					<input type="text" name="name_task" placeholder="Name">
+					<input type="text" name="acr_task" placeholder="ACR">
+					<input type="text" name="desc_task" placeholder="Description">
+					<input type="text" name="tags_task" placeholder="Tags">
+					<input type="text" name="comments_task" placeholder="Comments">
 
-					<input type="time" name="time_ini_task">
+					<input type="time" name="time_ini_task" placeholder="00:00">
 
-					<input type="time" name="time_fin_task">
+					<input type="time" name="time_fin_task" placeholder="00:00">
 					
-					<input type="button" name="add_task" value="Add"  onclick="addTask()" value="Submit">
-
+					<input type="submit" name="add_task" value="Add task">
+				</form>
 				</div>
 
 			</form>
