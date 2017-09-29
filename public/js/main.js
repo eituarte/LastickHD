@@ -2,23 +2,30 @@ var center=100;
 
 function addTask(){
 
+    var id=$("input[name=name_task]").val();
+    id.replace(" ", "");
 
-    $("#center").attr("d", describeArc(100, 100, 1, 0, 359));
+    var color$("input[name=name_task]").val();;
+
     var timeI=$("input[name=time_ini_task]").val();
     timeI=[Number(timeI[0]+timeI[1]), Number(timeI[3]+timeI[4])];
 
     var timeF=$("input[name=time_fin_task]").val();
     timeF=[Number(timeF[0]+timeF[1]), Number(timeF[3]+timeF[4])];
     
-    console.log(makePath('min', timeI, timeF));
-    var taskMin= $("<path stroke-dasharray='880' id='min' fill='none' d="+makePath('min', timeI, timeF)+"/>");
-    var taskHour= $("<path stroke-dasharray='817' id='hour' fill='none' d="+makePath('hour', timeI, timeF)+"/>");
+    var taskMin= $("<path stroke-dasharray='880' id='"+id+"m' fill='none' d='"+makePath('min', timeI, timeF)+"'/>");
+    var taskHour= $("<path stroke-dasharray='817' id='"+id+"h' fill='none' d='"+makePath('hour', timeI, timeF)+"'/>");
   
-    console.log(taskMin);
+    var gMin=$("<g stroke='"++"' ><use xlink:href='#"+id+"m'/></g>");
+    var gHour=$("<g stroke='"++"' ><use xlink:href='#"+id+"h'/></g>");
 
+
+    $(".gs").append(gMin);
+    $(".gs").append(gHour);
     $("min").append(taskMin);
     $("hour").append(taskHour);
-/*    if(!check())
+
+    /*if(!check())
         error();
 
     storeTask();
@@ -32,12 +39,12 @@ function makePath(type, timeIni, timeFin){
     
     if(type=="min"){
         radius=230;
-        a=iniFinHours(timeIni[0], timeIni[1], timeFin[0], timeFin[1]);
+        a=iniFinMin(timeIni[0], timeIni[1], timeFin[0], timeFin[1]);
     }
     
     if(type=="hour"){
         radius=140;
-        a=iniFinMin(timeIni[0], timeIni[1], timeFin[0], timeFin[1]);
+        a=iniFinHours(timeIni[0], timeIni[1], timeFin[0], timeFin[1]);
     }
 
     return describeArc(center, center, radius, a[0], a[1]);
@@ -70,7 +77,7 @@ window.onload = function(){
     var curr = h * 60 * 60 + m * 60 + s;
     svg.setCurrentTime(curr);
     */
-
+/*
     ah = [ 0, 0 ];
     am = [ 0, 0 ];
 
@@ -88,7 +95,7 @@ window.onload = function(){
     console.log(svg);
 
     $("#clock").append(svg);
-    /*
+    
      */
      //$("#min").attr("d", describeArc(100, 100, 230, am[0], am[1]));
 
@@ -215,7 +222,8 @@ function iniFinMin( hi, mi, hf, mf ) {
 
 	if(hf-hi>1|| (hi<hf && mi<mf && hf-hi==1)){
 		console.log(h+ " "+ m);
-		return [0, 359];
+	
+	return [0, 359];
 	}
 
 	angleIni=mi*6;
