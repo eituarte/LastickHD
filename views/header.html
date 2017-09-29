@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+	<title> Lastick </title>
+
+<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/css/structure.css" />
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+  
+  <link rel=stylesheet href="public/css/style.css"/>
+
+  <script src="public/js/main.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div id="content">
+
+	<div class="topContent">
+          <fieldset class="">
+		<br>
+            <label>Welcome  <%= user.user.username %></label>
+          </fieldset>
+        </div>
+        <div id="menu">
+          <fieldset class="">
+            <ul class="menu">
+              <li><label><a href="/user">
+                           <span>Profile</span>
+                         </a></label></li>
+              <li><label><a href="/profile">
+                           <span>Friend List</span>
+                         </a></label></li>
+              <li><label><a href="/password">
+                           <span>Password Setting</span>
+                         </a></label></li>
+              <li><label><a href="/reminder">
+                           <span>Birthday Reminder</span>
+                         </a></label></li>
+              <li><label><a href="/chat">
+                           <span>Chat</span>
+                         </a></label></li>
+              <li><label><a href="/logout">
+                           <span>Log Out</span>
+                         </a></label></li>
+            </ul>
+          </fieldset>
+        </div>
+</div>
+</body>
+</html>
