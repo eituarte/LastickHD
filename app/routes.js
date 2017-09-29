@@ -7,7 +7,7 @@ fs = require('fs');
 
 module.exports = function(app, passport,server) {
 	app.get('/', function(request, response) {
-		response.render('login.html');
+		response.redirect('/login');
 	});
 	app.get('/user', auth, function(request, response) {
 		Task.find({}, function(err, data){
@@ -56,7 +56,7 @@ module.exports = function(app, passport,server) {
 	});
 	app.get('/logout', function(request, response) {
 		request.logout();
-		response.redirect('/');
+		response.redirect('/login');
 	});
 
 		app.get('/login', function(request, response) {
