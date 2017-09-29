@@ -6,7 +6,6 @@
 		<div class='col-md-3'>
 
 		<h1>Add Task</h1>
-			<form id="add_task">
 				<div class="row">
 					<input type = "color" name = "color_task" id = "color1"/>
 					<button type = "button" id = "triangulate" onclick = "triangulate()">Triangulate</button>
@@ -20,18 +19,12 @@
 				<div class="row">
 					
 					<!--<input type="text" name="acronym_task" placeholder="Acronym">
-					this.task.name = request.body.name;
-	this.task.email = request.body.email;
-	this.task.dateIni = request.body.dateIni;
-	this.task.dateEnd = request.body.dateEnd;
-	this.task.acr = request.body.acr;
-	this.task.desc = request.body.desc;
-	this.task.tags = request.body.tags;
-	this.task.comments = request.body.comments;
-	this.task.repeat = request.body.repeat;
+
 	
 					-->
 				<form action="/addTask" method="post" class="box login">
+					<fieldset class="boxBody">
+
 					<input type="text" name="name_task" placeholder="Name">
 					<input type="text" name="acr_task" placeholder="ACR">
 					<input type="text" name="desc_task" placeholder="Description">
@@ -45,8 +38,6 @@
 					<input type="submit" name="add_task" value="Add task">
 				</form>
 				</div>
-
-			</form>
 		</div>
 		
 		<div id="clock" class='col-md-6'>

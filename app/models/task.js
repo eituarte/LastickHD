@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 var db = mongoose.createConnection( 'mongodb://localhost:27017/knoldus' );
 var taskSchema = mongoose.Schema({
     task             : { // correoUsuario, tiempoInicial, tiempoFinal, nombre, siglas, descripción, tags, comentarios, bool repetir {rep: true/false, días: [0, 1, 1, 1, 0, 0, 0]}
-		name : String/*,
+		name : String,
 	    email : String,
-	    dateIni : Date,
-		dateEnd : Date,
+	    dateIni : Time,
+		dateEnd : Time,
 		acr : String,
 		desc : String,
 		tags: [],
@@ -13,7 +13,7 @@ var taskSchema = mongoose.Schema({
 		repeat: {
 			rep : boolean,
 			days: []
-		}*/
+		}
     }
 });
 
