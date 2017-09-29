@@ -32,7 +32,6 @@ function addTask(){
     svg.appendChild(min);
 
 
-
     /*if(!check())
         error();
 
@@ -79,12 +78,12 @@ function check(){
 
 
 window.onload = function(){
-    
-   /* var now = new Date();
+    var svg = document.getElementsByTagName('svg')[0]; //Get svg element
+    var now = new Date();
     var h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
     var curr = h * 60 * 60 + m * 60 + s;
     svg.setCurrentTime(curr);
-    */
+    
 /*
     ah = [ 0, 0 ];
     am = [ 0, 0 ];
