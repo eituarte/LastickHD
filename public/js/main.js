@@ -1,9 +1,10 @@
 var center=100;
 
 function addTask(){
+                
 
-    var id=$("input[name=name_task]").val();
-    id.replace(" ", "");
+   var id=$("input[name=name_task]").val();
+    id.replace(/ /g,'')
 
     var color=$("input[name=color_task]").val();;
 
@@ -13,18 +14,24 @@ function addTask(){
 
     var timeF=$("input[name=time_fin_task]").val();
     timeF=[Number(timeF[0]+timeF[1]), Number(timeF[3]+timeF[4])];
-    
-    var taskMin= $("<path stroke-dasharray='880' id='"+id+"m' fill='none' d='"+makePath('min', timeI, timeF)+"'/>");
-    var taskHour= $("<path stroke-dasharray='817' id='"+id+"h' fill='none' d='"+makePath('hour', timeI, timeF)+"'/>");
-  
-    var gMin=$("<g stroke='"+color+"' ><use xlink:href='#"+id+"m'/></g>");
-    var gHour=$("<g stroke='"+color+"' ><use xlink:href='#"+id+"h'/></g>");
 
 
-    $(".gs").append(gMin);
-    $(".gs").append(gHour);
-    $("min").append(taskMin);
-    $("hour").append(taskHour);
+    var svg = document.getElementsByTagName('svg')[0]; //Get svg element
+    var min = document.createElementNS("http://www.w3.org/2000/svg", 'path'); //Create a path in SVG's namespace
+    min.setAttribute("d", makePath("min", timeI, timeF)); //Set path's data
+    min.style.fill = "none";
+    min.style.stroke = color; //Set stroke colour
+    min.style.strokeWidth = "25px"; //Set stroke width
+    var hour = document.createElementNS("http://www.w3.org/2000/svg", 'path'); //Create a path in SVG's namespace
+    hour.setAttribute("d", makePath("hour", timeI, timeF)); //Set path's data
+    hour.style.fill = "none";
+    hour.style.stroke = color; //Set stroke colour
+    hour.style.strokeWidth = "25px"; //Set stroke width
+
+    svg.appendChild(hour);
+    svg.appendChild(min);
+
+
 
     /*if(!check())
         error();
@@ -117,7 +124,7 @@ function getIntRGBvalues(hex){
 }
 
 function triangulate(){
-    var colour1 = $('#color1").val();
+    var colour1 = $("#color1").val();
     var colour2 = triangulateColour(colour1);
     var colour3 = triangulateColour(colour2);
 
