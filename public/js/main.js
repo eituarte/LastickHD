@@ -5,7 +5,8 @@ function addTask(){
     var id=$("input[name=name_task]").val();
     id.replace(" ", "");
 
-    var color$("input[name=name_task]").val();;
+    var color=$("input[name=color_task]").val();;
+
 
     var timeI=$("input[name=time_ini_task]").val();
     timeI=[Number(timeI[0]+timeI[1]), Number(timeI[3]+timeI[4])];
@@ -16,8 +17,8 @@ function addTask(){
     var taskMin= $("<path stroke-dasharray='880' id='"+id+"m' fill='none' d='"+makePath('min', timeI, timeF)+"'/>");
     var taskHour= $("<path stroke-dasharray='817' id='"+id+"h' fill='none' d='"+makePath('hour', timeI, timeF)+"'/>");
   
-    var gMin=$("<g stroke='"++"' ><use xlink:href='#"+id+"m'/></g>");
-    var gHour=$("<g stroke='"++"' ><use xlink:href='#"+id+"h'/></g>");
+    var gMin=$("<g stroke='"+color+"' ><use xlink:href='#"+id+"m'/></g>");
+    var gHour=$("<g stroke='"+color+"' ><use xlink:href='#"+id+"h'/></g>");
 
 
     $(".gs").append(gMin);
@@ -116,7 +117,7 @@ function getIntRGBvalues(hex){
 }
 
 function triangulate(){
-    var colour1 = $('#color1').val();
+    var colour1 = $('#color1").val();
     var colour2 = triangulateColour(colour1);
     var colour3 = triangulateColour(colour2);
 
