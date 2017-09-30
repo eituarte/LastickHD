@@ -337,8 +337,5 @@ function noview(){
     
     //document.write(circles);
     //document.write(t);
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> origin/master
