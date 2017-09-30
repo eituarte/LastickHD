@@ -29,9 +29,7 @@ taskSchema.methods.addTask = function(request, response){
 	this.task.comments = request.body.comments_task;
 	this.task.repeat = request.body.repeat;
 	this.task.color = request.body.color_task;
-	//console.log("rula");
-	//this.task.save();
-	response.redirect('/about');
+	//response.redirect('/about');
 };
 
 
