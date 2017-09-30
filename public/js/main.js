@@ -98,8 +98,8 @@ function clock(){
     var atick=iniFinMin( now.getHours(), now.getMinutes(), now.getHours(), now.getMinutes()+1);
     var atack=iniFinHours( now.getHours(), now.getMinutes(), now.getHours(), now.getMinutes()+1);
 
-    tick.setAttribute("d", describeArc(center, center, 200, atick[0], atick[0]+1)); //Set path's data
-    tack.setAttribute("d", describeArc(center, center, 155, atack[0], atack[0]+1));
+    tick.setAttribute("d", describeArc(center, center, 205, atick[0], atick[0]+1)); //Set path's data
+    tack.setAttribute("d", describeArc(center, center, 155, atack[0], atack[0]+1.5));
     
     if(inn){
 
@@ -302,4 +302,39 @@ function describeArc(x, y, radius, startAngle, endAngle){
     ].join(" ");
 
     return d;       
+}
+
+
+function view(){
+    var circles=document.getElementsByClassName("radius");
+
+    for(var i=0; i<circles.length; i++){
+        circles[i].setAttribute("stroke", "white");
+    }
+    
+    var t=document.getElementsByClassName("guie");
+
+    for(var i=0; i<t.length; i++){
+        t[i].setAttribute("fill", "white");
+    }
+    
+    //document.write(circles);
+    //document.write(t);
+}
+
+function noview(){
+     var circles=document.getElementsByClassName("radius");
+
+    for(var i=0; i<circles.length; i++){
+        circles[i].setAttribute("stroke", "none");
+    }
+    
+    var t=document.getElementsByClassName("guie");
+
+    for(var i=0; i<t.length; i++){
+        t[i].setAttribute("fill", "none");
+    }
+    
+    //document.write(circles);
+    //document.write(t);
 }
