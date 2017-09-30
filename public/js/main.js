@@ -3,6 +3,9 @@ var center=100;
 function appendTask(task){
     console.log("task: " + task);
 
+
+
+
     var id = task._id;
     var color = task.task.color;
     var timeI = task.task.dateIni;
