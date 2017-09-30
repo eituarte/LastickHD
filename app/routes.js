@@ -40,7 +40,7 @@ module.exports = function(app, passport,server) {
 		newTask.task.tags = request.body.tags_task;
 		newTask.task.comments = request.body.comments_task;*/
 		//this.task.repeat = request.body.repeat;
-		//newTask.save();
+		newTask.save();
 		//newTask.task.name = req.body.taskname;
 
 		
