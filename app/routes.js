@@ -34,7 +34,6 @@ module.exports = function(app, passport,server) {
 		newTask.addTask(request,response);
 		newTask.save();
 
-		appendTask(newTask);
 		// Hacemos appends con sectores
 	});
 

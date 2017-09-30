@@ -1,4 +1,15 @@
 var center=100;
+var tick=document.createElementNS("http://www.w3.org/2000/svg", 'path');
+tick.style.fill = "none";
+tick.style.stroke = "#fff"; //Set stroke colour
+tick.style.strokeWidth="85px";
+var tack=document.createElementNS("http://www.w3.org/2000/svg", 'path');
+tack.style.fill = "none";
+tack.style.stroke = "#fff"; //Set stroke colour
+tack.style.strokeWidth="55px";
+var now;
+var inn=false;
+var currentTask;
 
 function appendTask(task){
     console.log("task: " + task);
@@ -37,8 +48,8 @@ function appendTask(task){
     hour.style.stroke = color; //Set stroke colour
     hour.style.strokeWidth = "25px"; //Set stroke width
 
-    svg.appendChild(hour);
-    svg.appendChild(min);
+    svg.prepend(hour);
+    svg.prepend(min);
 
 
     /*if(!check())
@@ -84,15 +95,40 @@ function check(){
 
 
 }
+function clock(){
+    now = new Date();
+    var s=now.getHours()+"-"+now.getMinutes();
+    
+    if(now.getHours()<10)
+        s="0"+now.getHours()+"-"+now.getMinutes();
+    if(now.getMinutes()<10)
+        s=now.getHours()+"-0"+now.getMinutes();
+    if(now.getHours()<10 && now.getMinutes()<10)
+        s="0"+now.getHours()+"-0"+now.getMinutes();
+
+    document.getElementById("time").innerHTML=s;
+    var atick=iniFinMin( now.getHours(), now.getMinutes(), now.getHours(), now.getMinutes()+1);
+    var atack=iniFinHours( now.getHours(), now.getMinutes(), now.getHours(), now.getMinutes()+1);
+
+    tick.setAttribute("d", describeArc(center, center, 205, atick[0], atick[0]+1)); //Set path's data
+    tack.setAttribute("d", describeArc(center, center, 155, atack[0], atack[0]+1.5));
+    
+    if(inn){
+
+    }
+    
+    setTimeout(clock, 1000);
+
+}
 
 
 window.onload = function(){
     var svg = document.getElementsByTagName('svg')[0]; //Get svg element
-    var now = new Date();
-    var h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
-    var curr = h * 60 * 60 + m * 60 + s;
-    svg.setCurrentTime(curr);
+
+    svg.appendChild(tick);
+    svg.appendChild(tack);
     
+    clock();
 /*
     ah = [ 0, 0 ];
     am = [ 0, 0 ];
@@ -236,11 +272,9 @@ function iniFinMin( hi, mi, hf, mf ) {
 	var h=hf-hi;
 	var m=mi-mf;
 
-	if(hf-hi>1|| (hi<hf && mi<mf && hf-hi==1)){
-		console.log(h+ " "+ m);
+	if(hf-hi>1|| (hi<hf && mi<mf && hf-hi==1))
+	   return [0, 359];
 	
-	return [0, 359];
-	}
 
 	angleIni=mi*6;
 	angleFin=mf*6;
@@ -280,4 +314,39 @@ function describeArc(x, y, radius, startAngle, endAngle){
     ].join(" ");
 
     return d;       
+}
+
+
+function view(){
+    var circles=document.getElementsByClassName("radius");
+
+    for(var i=0; i<circles.length; i++){
+        circles[i].setAttribute("stroke", "white");
+    }
+    
+    var t=document.getElementsByClassName("guie");
+
+    for(var i=0; i<t.length; i++){
+        t[i].setAttribute("fill", "white");
+    }
+    
+    //document.write(circles);
+    //document.write(t);
+}
+
+function noview(){
+     var circles=document.getElementsByClassName("radius");
+
+    for(var i=0; i<circles.length; i++){
+        circles[i].setAttribute("stroke", "none");
+    }
+    
+    var t=document.getElementsByClassName("guie");
+
+    for(var i=0; i<t.length; i++){
+        t[i].setAttribute("fill", "none");
+    }
+    
+    //document.write(circles);
+    //document.write(t);
 }
