@@ -11,22 +11,12 @@ var now;
 var inn=false;
 var currentTask;
 
-function appendTask(task){
-    console.log("task: " + task);
 
+function addTask(){
+    var id=$("input[name=name_task]").val();
+    id.replace(/ /g,'')
 
-
-
-    var id = task._id;
-    var color = task.task.color;
-    var timeI = task.task.dateIni;
-    var timeF = task.task.dateEnd;
-    ////
-    /*
-   var id=$("input[name=name_task]").val();
-    id.replace(/ /g,'');
-
-    var color=$("input[name=color_task]").val();
+    var color=$("input[name=color_task]").val();;
 
 
     var timeI=$("input[name=time_ini_task]").val();
@@ -35,7 +25,6 @@ function appendTask(task){
     var timeF=$("input[name=time_fin_task]").val();
     timeF=[Number(timeF[0]+timeF[1]), Number(timeF[3]+timeF[4])];
 
-    */
     var svg = document.getElementsByTagName('svg')[0]; //Get svg element
     var min = document.createElementNS("http://www.w3.org/2000/svg", 'path'); //Create a path in SVG's namespace
     min.setAttribute("d", makePath("min", timeI, timeF)); //Set path's data
@@ -73,7 +62,6 @@ function makePath(type, timeIni, timeFin){
         radius=140;
         a=iniFinHours(timeIni[0], timeIni[1], timeFin[0], timeFin[1]);
     }
-
     return describeArc(center, center, radius, a[0], a[1]);
 }
 
@@ -349,4 +337,8 @@ function noview(){
     
     //document.write(circles);
     //document.write(t);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
