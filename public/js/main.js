@@ -1,12 +1,18 @@
 var center=100;
 
-function addTask(){
-                
+function appendTask(task){
+    console.log("task: " + task);
 
+    var id = task._id;
+    var color = task.task.color;
+    var timeI = task.task.dateIni;
+    var timeF = task.task.dateEnd;
+    ////
+    /*
    var id=$("input[name=name_task]").val();
-    id.replace(/ /g,'')
+    id.replace(/ /g,'');
 
-    var color=$("input[name=color_task]").val();;
+    var color=$("input[name=color_task]").val();
 
 
     var timeI=$("input[name=time_ini_task]").val();
@@ -15,7 +21,7 @@ function addTask(){
     var timeF=$("input[name=time_fin_task]").val();
     timeF=[Number(timeF[0]+timeF[1]), Number(timeF[3]+timeF[4])];
 
-
+    */
     var svg = document.getElementsByTagName('svg')[0]; //Get svg element
     var min = document.createElementNS("http://www.w3.org/2000/svg", 'path'); //Create a path in SVG's namespace
     min.setAttribute("d", makePath("min", timeI, timeF)); //Set path's data
