@@ -43,8 +43,8 @@ module.exports = function(app, passport,server) {
 			user : request.user
 		});
 	});
-	app.get('/about', auth, function(request, response) {
-		response.render('about.html', {
+	app.get('/index', auth, function(request, response) {
+		response.render('index.html', {
 			user : request.user
 		});
 	});
@@ -58,7 +58,7 @@ module.exports = function(app, passport,server) {
 		});
 
 		app.post('/login', passport.authenticate('login', {
-			successRedirect : '/about', 
+			successRedirect : '/index', 
 			failureRedirect : '/login', 
 			failureFlash : true
 		}));

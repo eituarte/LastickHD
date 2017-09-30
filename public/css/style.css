@@ -5,7 +5,7 @@ body {
 h1 {
 	color: white !important;
 	text-align: center;
-	font-size: 16px;
+	font-size: 20px;
 }
 
 #logo {
@@ -14,6 +14,29 @@ h1 {
     margin-bottom: 50px;
 }
 
+.col-md-3{
+	border:2px solid white;
+	border-radius: 10px;
+}
+
+.add{
+	width: 180px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cuadrado{
+	 width: 30px; 
+     height: 30px; 
+     background: #428bca;
+}
+
+.leyenda{
+	color:white;
+	height: 200px;
+}
+
 input {
 	margin: 5px 5px 5px 5px;
 	border: none;
@@ -41,11 +64,15 @@ input[type=text] {
 
 input[type=text]:focus {
     background-color: #222;
+}
 
-<<<<<<< HEAD
+input[type=time]{
+}
+
 input {
 	margin: 5px 5px 5px 5px;
 	border: none;
+	text-align: center;
 }
 input[type=color]{
 	color: #ffffff;
@@ -71,14 +98,36 @@ input[type=text] {
 input[type=text]:focus {
     background-color: #222;
 
-=======
->>>>>>> origin/master
 }
 
 a {
 	color:white;
 	text-decoration-color: white;
 	text-decoration: none;
+}
+
+.box-izq{
+	color:white !important;
+	text-align: center;
+}
+
+.box-der{
+	color:white !important;
+	width: 200px !important;
+}
+
+.shared{
+	text-align: center;
+    margin: 30px;
+}
+
+.shared img{
+	width: 50px;
+	margin:5px;
+}
+
+.tit_tiempo{
+
 }
 
 
@@ -98,8 +147,5 @@ a {
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
    color:    white;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master
+
