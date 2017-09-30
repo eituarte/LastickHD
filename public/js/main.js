@@ -7,6 +7,9 @@ var tack=document.createElementNS("http://www.w3.org/2000/svg", 'path');
 tack.style.fill = "none";
 tack.style.stroke = "#fff"; //Set stroke colour
 tack.style.strokeWidth="55px";
+var now;
+var in=false;
+var currentTask;
 
 
 function addTask(){
@@ -81,7 +84,7 @@ function check(){
 
 }
 function clock(){
-    var now = new Date();
+    now = new Date();
     var s=now.getHours()+"-"+now.getMinutes();
     
     if(now.getHours()<10)
@@ -97,6 +100,11 @@ function clock(){
 
     tick.setAttribute("d", describeArc(center, center, 200, atick[0], atick[0]+1)); //Set path's data
     tack.setAttribute("d", describeArc(center, center, 155, atack[0], atack[0]+1));
+    
+    if(in){
+
+    }
+    
     setTimeout(clock, 1000);
 
 }
