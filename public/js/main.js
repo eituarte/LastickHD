@@ -8,7 +8,7 @@ tack.style.fill = "none";
 tack.style.stroke = "#fff"; //Set stroke colour
 tack.style.strokeWidth="55px";
 var now;
-var in=false;
+var inn=false;
 var currentTask;
 
 
@@ -101,7 +101,7 @@ function clock(){
     tick.setAttribute("d", describeArc(center, center, 200, atick[0], atick[0]+1)); //Set path's data
     tack.setAttribute("d", describeArc(center, center, 155, atack[0], atack[0]+1));
     
-    if(in){
+    if(inn){
 
     }
     
