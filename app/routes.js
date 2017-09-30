@@ -26,22 +26,29 @@ module.exports = function(app, passport,server) {
 		});
 	});
 
-	app.post('/addTask', auth, function(req, resp){
+	app.post('/addTask', function(request, response){
 		// Hay que llamar al método de task.js
 		// Comprobar con vuelta atrás si la tarea se solapa con otra
 		//Task.addTask(req, resp);
 		var newTask = Task();
-		newTask.task.name = req.body.taskname;
+		newTask.addTask(request,response);
+		/*newTask.task.name = request.body.name_task;
+		newTask.task.dateIni = request.body.time_ini_task;
+		newTask.task.dateEnd = request.body.time_fin_task;
+		newTask.task.acr = request.body.acr_task;
+		newTask.task.desc = request.body.desc_task;
+		newTask.task.tags = request.body.tags_task;
+		newTask.task.comments = request.body.comments_task;*/
+		//this.task.repeat = request.body.repeat;
 		newTask.save();
+		//newTask.task.name = req.body.taskname;
 
 		
 		//console.log(newTask);
 
-		resp.redirect('/user');
+		//response.redirect('/about');
+		// Hacemos appends con sectores
 	});
-	app.get('/image.png', function (req, res) {
-    		//res.sendfile(path.resolve('./uploads/image_'+req.user._id));
-	}); 
 
 
 	app.get('/edit', auth, function(request, response) {

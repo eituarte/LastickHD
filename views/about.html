@@ -6,12 +6,8 @@
 		<div class='col-md-3'>
 
 		<h1>Add Task</h1>
-			<form id="add_task">
 				<div class="row">
-					<input type = "color" name = "color_task" id = "color1"/>
-					<button type = "button" id = "triangulate" onclick = "triangulate()">Triangulate</button>
-			
-				<!--<p id = "1">Colour 1</p>
+					<!--<p id = "1">Colour 1</p>
 					<p id = "2">Colour 2</p>
 					<p id = "3">Colour 3</p> -->
 			
@@ -20,18 +16,26 @@
 				<div class="row">
 					
 					<!--<input type="text" name="acronym_task" placeholder="Acronym">
+
+	
 					-->
+				<form action="/addTask" method="post" class="box login">
+					<fieldset class="boxBody">
+					<input type = "color" name = "color_task" id = "color1"/>
+					<button type = "button" id = "triangulate" onclick = "triangulate()">Triangulate</button>
 					<input type="text" name="name_task" placeholder="Name">
+					<input type="text" name="acr_task" placeholder="ACR">
+					<input type="text" name="desc_task" placeholder="Description">
+					<input type="text" name="tags_task" placeholder="Tags">
+					<input type="text" name="comments_task" placeholder="Comments">
 
-					<input type="time" name="time_ini_task">
+					<input type="time" name="time_ini_task" placeholder="00:00">
 
-					<input type="time" name="time_fin_task">
+					<input type="time" name="time_fin_task" placeholder="00:00">
 					
-					<input type="button" name="add_task" value="Add"  onclick="addTask()" value="Submit">
-
+					<input type="submit" name="add_task" value="Add task">
+				</form>
 				</div>
-
-			</form>
 		</div>
 		
 		<div id="clock" class='col-md-6'>
